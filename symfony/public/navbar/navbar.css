@@ -1,0 +1,12 @@
+.header {
+    background-color: red;
+}
+#menuCross {
+    display: none;
+}
+.sousMenu {
+    display: none;
+    background-color: blue;
+    height: 100vh;
+    width: 20vw;
+}
