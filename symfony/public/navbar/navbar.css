@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+}
+nav {
+    height: 100%;
+}
+.toggle {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 20;
+    color: red;
+}
+.fermer {
+    display: none;
+}
+.open .ouvrir {
+    display: none;
+}
+.open .fermer {
+    display: block;
+}
+.open .menu {
+    transform: translateX(0);
+}
+
+/* Nom du restaurant */
+.restau {
+    position: absolute;
+    top: 1rem;
+    left: 45vw;
+    color: red;
+}
+
+/* Adresse du restaurant */
+.adress {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: red;
+}
+
+/* Menu du site */
+.menu {
+    height: 100%;
+    width: 25vw;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    background: white;
+}
+.liste {
+    margin-top: 10px;
+}
+.gestion {
+    padding-top: 25vh;
+}
+
+
+/* Fond d'écran */
+.fond {
+    background: url('restaurant.jpg') no-repeat center fixed;
+    background-size: cover;
+    height: 100vh;
+}
