@@ -5,17 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link href="navbar/navbar.css" rel="stylesheet" type="text/css">
+        <link href="navbar/navbar.css" rel="stylesheet" type="text/css">   
         {% block stylesheets %} {% endblock %}
         <title>Restaurant</title>
         <meta name="description" content="Site du restaurant">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         
     </head>
-    <body>       
-        <header>
-            <nav>
-                <div class="toggle">
+    <body>         
+        <header class="container-fluid">
+            <div class="row barre">
+                <div class="col toggle">
                     <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-list ouvrir" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                     </svg> 
@@ -33,18 +33,16 @@
                         <li class="liste"><a href="#">Paramétre</a></li>
                     </ul>
                 </div>  
-                <div class="restau">
+                <div class="col restau d-flex justify-content-center">
                     <h1>Restaurant</h1>
                 </div> 
-                <div>
+                <div class="col d-flex justify-content-end">
                     <adress class="adress">Adresse du restaurant</adress>
-                </div> 
-            </nav>
+                </div>  
+            </div>    
         </header>
-        <section class="fond"></section>
-        {% block body %}{% endblock %}
+        {% block body %}{% endblock %}  
 
-        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <script src="navbar/navbar.js"></script>

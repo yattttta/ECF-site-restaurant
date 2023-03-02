@@ -1,30 +1,22 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-    font-size: 16px;
-}
-
 /* Header */
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100vh;
-
+    background: url('restaurant.jpg') no-repeat center;
+    background-size: cover;   
 }
-nav {
-    height: 100%;
+.scroll {
+    background-color: red;
+}
+.barre {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    z-index: 2;   
+    transition: all 0.55s ease-in-out;
 }
 .toggle {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 20;
-    color: red;
+    z-index: 2;
+    color: black;
 }
 .fermer {
     display: none;
@@ -40,41 +32,21 @@ nav {
 }
 
 /* Nom du restaurant */
-.restau {
-    position: absolute;
-    top: 1rem;
-    left: 45vw;
-    color: red;
-}
 
-/* Adresse du restaurant */
-.adress {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
-    color: red;
-}
 
 /* Menu du site */
 .menu {
     height: 100%;
     width: 25vw;
     transform: translateX(-100%);
-    transition: transform 0.5s;
-    background: white;
+    transition: transform 0.6s;
+    background: green;
+    position: fixed;
+    z-index: 1;
 }
 .liste {
     margin-top: 10px;
 }
 .gestion {
     padding-top: 25vh;
-}
-
-
-/* Fond d'écran */
-.fond {
-    background: url('restaurant.jpg') no-repeat center fixed;
-    background-size: cover;
-    height: 100vh;
 }
