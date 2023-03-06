@@ -7,7 +7,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link href="navbar/navbar.css" rel="stylesheet" type="text/css">   
         {% block stylesheets %} {% endblock %}
-        <title>Restaurant</title>
+        <title>Le Quai Antique</title>
         <meta name="description" content="Site du restaurant">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         
@@ -34,15 +34,18 @@
                     </ul>
                 </div>  
                 <div class="col restau d-flex justify-content-center">
-                    <h1>Restaurant</h1>
+                    <a href="/accueil"><h1>Le Quai Antique</h1></a>
                 </div> 
                 <div class="col d-flex justify-content-end">
-                    <adress class="adress">Adresse du restaurant</adress>
+                    <adress class="adress">38 place des montagnes , 73000 Chambéry</adress>
                 </div>  
-            </div>    
+            </div>  
+            {% block reservation %}{% endblock %} 
         </header>
         {% block body %}{% endblock %}  
-
+        <footer class="container-fluid">
+            <h2 class="row">Horaires d'ouverture</h2>
+        </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <script src="navbar/navbar.js"></script>
