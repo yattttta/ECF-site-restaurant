@@ -43,9 +43,15 @@ header {
     background: green;
     position: fixed;
     z-index: 1;
+    
+}
+.lien {
+    text-decoration: none;
+    color: purple;
 }
 .liste {
     margin-top: 10px;
+    
 }
 .gestion {
     padding-top: 25vh;

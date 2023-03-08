@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    
     let toggle = document.querySelector('.toggle')
     let body = document.querySelector('body')
 
