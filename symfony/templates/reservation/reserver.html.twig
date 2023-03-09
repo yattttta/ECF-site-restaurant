@@ -9,7 +9,7 @@
     
 {% endblock %}
 
-{% block reservation %}
+{% block body %}
 
 
     <div class="row">
@@ -18,6 +18,14 @@
             <p class="card-text">Merci de préciser en commentaire s'il y a des allergies parmi les convives.<br>
             Pour tout retard de plus de 20 min votre table sera donnée à d'autres clients.<br>
             20 convives maximum.</p>
+
+            {% if app.user %}
+                <div class="mb-3">
+                Vous êtes connecté en tant qu'{{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                </div>
+            {% endif %}
+
+            
             <div class="row card-body">
                 <div class=" col input-group mb-3">
                     <span class="input-group-text">

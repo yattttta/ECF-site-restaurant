@@ -26,7 +26,7 @@
                 <div class="menu">
                     <ul>
                         <li class="gestion"><a href="/accueil" class="lien">Page d'accueil</a></li>
-                        <li class="liste"><a href="#" class="lien">Se connecter</a></li>
+                        <li class="liste"><a href="/login" class="lien">Se connecter</a></li>
                         <li class="liste"><a href="/reservation" class="lien">Réserver</a></li>
                         <li class="liste"><a href="#" class="lien">Contacts</a></li>
                         <li class="liste"><a href="#" class="lien">Rechercher</a></li>
@@ -40,9 +40,9 @@
                     <adress class="adress">38 place des montagnes , 73000 Chambéry</adress>
                 </div>  
             </div>  
-            {% block reservation %}{% endblock %} 
+            {% block body %}{% endblock %} 
         </header>
-        {% block body %}{% endblock %}  
+        {% block accueil %}{% endblock %}  
         <footer class="container-fluid">
             <h2 class="row">Horaires d'ouverture</h2>
         </footer>
