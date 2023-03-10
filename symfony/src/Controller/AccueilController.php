@@ -14,7 +14,7 @@ class AccueilController extends AbstractController
     public function index(UserPasswordHasherInterface $encoder): Response
     {
         $user = new User();
-        $hash_password = $encoder->hashPassword($user, 'admin');
+        $hash_password = $encoder->hashPassword($user, '');
 
         return $this->render('accueil/accueil.html.twig', [
             'controller_name' => 'AccueilController',

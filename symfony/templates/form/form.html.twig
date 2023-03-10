@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %} 
+    <link href="pageReserver/pageReserver.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="card carte d-flex mx-auto p-3">
+            <div class="row card-body">
+                <h5 class="card-title text-center">Formulaire d'inscription</h5>
+                <p class="card-text">
+                    
+                    {{ form_start(form) }}
+                        {{ form_row(form.user.email) }}
+                        {{ form_row(form.user.password) }}
+                        {{ form_row(form.infoUser.convives) }}
+                        {{ form_row(form.infoUser.allergies) }}
+
+                        <button type="submit" class="modal-btn modalAdd">S'inscrire</button>
+
+                    {{ form_end(form) }}
+                </p>
+            </div>   
+        </div>
+    </div>
+
+{% endblock %}
