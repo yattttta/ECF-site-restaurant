@@ -4,8 +4,6 @@ namespace App\Form;
 
 use App\Entity\Reservations;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -22,6 +20,7 @@ class ReservationsType extends AbstractType
             ->add('convives', IntegerType::class, ['label' => 'Nombre de convives', 'attr' => ['min' => 1, 'max' => 20]])
             ->add('date', TextType::class)
             ->add('time')
+            ->add('allergies', TextType::class, ['required' => false])
         ;
     }
 

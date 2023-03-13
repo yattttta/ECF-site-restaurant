@@ -32,6 +32,9 @@ class Reservations
     #[ORM\Column(type: Types::TEXT)]
     private ?string $date = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $allergies = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +108,18 @@ class Reservations
     public function setDate(string $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getAllergies(): ?string
+    {
+        return $this->allergies;
+    }
+
+    public function setAllergies(?string $allergies): self
+    {
+        $this->allergies = $allergies;
 
         return $this;
     }

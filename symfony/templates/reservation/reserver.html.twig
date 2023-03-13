@@ -29,15 +29,17 @@
                 <div class="row card-body">
                     <div class="row">
                         <div class="col input-group mb-3">
-                            {{ form_widget(reservations.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}                   
+                            <input class="form-control" placeholder="Nom" {% if app.user %} value="{{ app.user.nom }}" {% endif %} {{ form_widget(reservations.nom) }}                                     
                         </div>
                         <div class="col input-group mb-3">
-                            {{ form_widget(reservations.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+                            <input class="form-control" placeholder="Prénom" {% if app.user %} value="{{ app.user.prenom }}" {% endif %}
+                            {{ form_widget(reservations.prenom) }}
                         </div>
                     </div>
                     <div class="row">        
                         <div class="col input-group mb-3">
-                            {{ form_widget(reservations.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+                            <input class="form-control" placeholder="Email" {% if app.user %} value="{{ app.user.email }}" {% endif %}
+                            {{ form_widget(reservations.email) }}
                         </div>                       
                         <div class="col input-group mb-3">                   
                             <span class="input-group-text">
@@ -96,7 +98,8 @@
                                     c8.754-8.754,13.48-20.868,12.969-33.238C441.82,439.631,436.141,427.982,426.745,419.983z"/>
                                 </svg>
                             </span>
-                            {{ form_widget(reservations.convives, {'attr': {'class': 'form-control', 'placeholder': 'Nombre de convives'}}) }}                   
+                            <input class="form-control" placeholder="Nombre de convives" {% if app.user %} value="{{ app.user.convives }}" {% endif %}
+                            {{ form_widget(reservations.convives) }}                
                         </div> 
                     </div>
                     <div class="row">     
@@ -107,19 +110,23 @@
                                     <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
                                 </svg>
                             </span>
-                            {{ form_widget(reservations.date, {'id': 'date1', 'attr': {'class': 'form-select', 'placeholder': 'Date'}}) }}                   
+                            <input class="form-select" id="date1" placeholder="Date de réservation" {{ form_widget(reservations.date) }}                   
                         </div>
                         <div class=" col input-group mb-3">
-                            {{ form_widget(reservations.time, {'attr': {'class': 'form-select', 'placeholder': 'Heure'}}) }}
+                            <input class="form-control" placeholder="Heure de réservation" {{ form_widget(reservations.time) }}
                         </div>
                     </div>
-
-
-
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="row">
+                        <div class="col input-group mb-3">
+                            <input class="form-control" placeholder="Vos allergies ici" {% if app.user %} value="{{ app.user.allergies }}" {% endif %}
+                            {{ form_widget(reservations.allergies) }}
+                        </div>
+                    </div>        
+                    
                 <button type="submit" class="modal-btn modalAdd">Réserver</a>
 
                 {{ form_end(reservations) }}
+                
             </div>
 
         </div>

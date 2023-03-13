@@ -27,14 +27,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\OneToOne(mappedBy: 'id_user', cascade: ['persist', 'remove'])]
-    private ?InfoUser $infoUser = null;
-
     #[ORM\Column(length: 255)]
     private ?string $Nom = null;
 
     #[ORM\Column(length: 255)]
     private ?string $Prenom = null;
+
+    #[ORM\Column]
+    private ?int $convives = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $allergies = null;
 
     public function getId(): ?int
     {
@@ -106,23 +109,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getInfoUser(): ?InfoUser
-    {
-        return $this->infoUser;
-    }
-
-    public function setInfoUser(InfoUser $infoUser): self
-    {
-        // set the owning side of the relation if necessary
-        if ($infoUser->getIdUser() !== $this) {
-            $infoUser->setIdUser($this);
-        }
-
-        $this->infoUser = $infoUser;
-
-        return $this;
-    }
-
     public function getNom(): ?string
     {
         return $this->Nom;
@@ -143,6 +129,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPrenom(string $Prenom): self
     {
         $this->Prenom = $Prenom;
+
+        return $this;
+    }
+
+    public function getConvives(): ?int
+    {
+        return $this->convives;
+    }
+
+    public function setConvives(int $convives): self
+    {
+        $this->convives = $convives;
+
+        return $this;
+    }
+
+    public function getAllergies(): ?string
+    {
+        return $this->allergies;
+    }
+
+    public function setAllergies(?string $allergies): self
+    {
+        $this->allergies = $allergies;
 
         return $this;
     }
