@@ -13,6 +13,8 @@
                 <p class="card-text">
                     
                     {{ form_start(form) }}
+                        {{ form_row(form.user.nom) }}
+                        {{ form_row(form.user.prenom) }}
                         {{ form_row(form.user.email) }}
                         {{ form_row(form.user.password) }}
                         {{ form_row(form.infoUser.convives) }}

@@ -30,6 +30,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(mappedBy: 'id_user', cascade: ['persist', 'remove'])]
     private ?InfoUser $infoUser = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $Nom = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Prenom = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -113,6 +119,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         $this->infoUser = $infoUser;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->Nom;
+    }
+
+    public function setNom(string $Nom): self
+    {
+        $this->Nom = $Nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->Prenom;
+    }
+
+    public function setPrenom(string $Prenom): self
+    {
+        $this->Prenom = $Prenom;
 
         return $this;
     }
