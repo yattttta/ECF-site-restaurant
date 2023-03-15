@@ -1,17 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link href="pageReserver/pageReserver.css" rel="stylesheet" type="text/css">
-    <link href="pageReserver/jquery-ui-light/jquery-ui.css" rel="stylesheet" type="text/css">
-    <link href="pageReserver/jquery-ui-light/jquery-ui.structure.css" rel="stylesheet" type="text/css">
-    <link href="pageReserver/jquery-ui-light/jquery-ui.theme.css" rel="stylesheet" type="text/css">
-
-    
+    <link href="pageReserver/pageReserver.css" rel="stylesheet" type="text/css">   
 {% endblock %}
 
 {% block body %}
-
-
     <div class="row">
         <div class="card carte d-flex mx-auto p-3">
             <img src="pageAccueil/imgReserver.jpg" class="card-img-top d-flex mx-auto" alt="...">
@@ -32,14 +25,12 @@
                             <input class="form-control" placeholder="Nom" {% if app.user %} value="{{ app.user.nom }}" {% endif %} {{ form_widget(reservations.nom) }}                                     
                         </div>
                         <div class="col input-group mb-3">
-                            <input class="form-control" placeholder="Prénom" {% if app.user %} value="{{ app.user.prenom }}" {% endif %}
-                            {{ form_widget(reservations.prenom) }}
+                            <input class="form-control" placeholder="Prénom" {% if app.user %} value="{{ app.user.prenom }}" {% endif %} {{ form_widget(reservations.prenom) }}
                         </div>
                     </div>
                     <div class="row">        
                         <div class="col input-group mb-3">
-                            <input class="form-control" placeholder="Email" {% if app.user %} value="{{ app.user.email }}" {% endif %}
-                            {{ form_widget(reservations.email) }}
+                            <input class="form-control" placeholder="Email" {% if app.user %} value="{{ app.user.email }}" {% endif %} {{ form_widget(reservations.email) }}  
                         </div>                       
                         <div class="col input-group mb-3">                   
                             <span class="input-group-text">
@@ -98,8 +89,7 @@
                                     c8.754-8.754,13.48-20.868,12.969-33.238C441.82,439.631,436.141,427.982,426.745,419.983z"/>
                                 </svg>
                             </span>
-                            <input class="form-control" placeholder="Nombre de convives" {% if app.user %} value="{{ app.user.convives }}" {% endif %}
-                            {{ form_widget(reservations.convives) }}                
+                            <input class="form-control" placeholder="Nombre de convives" {% if app.user %} value="{{ app.user.convives }}" {% endif %} {{ form_widget(reservations.convives) }}                                            
                         </div> 
                     </div>
                     <div class="row">     
@@ -110,7 +100,7 @@
                                     <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
                                 </svg>
                             </span>
-                            <input class="form-select" id="date1" placeholder="Date de réservation" {{ form_widget(reservations.date) }}                   
+                            {{ form_widget(reservations.date) }}                   
                         </div>
                         <div class=" col input-group mb-3">
                             <input class="form-control" placeholder="Heure de réservation" {{ form_widget(reservations.time) }}
@@ -118,22 +108,18 @@
                     </div>
                     <div class="row">
                         <div class="col input-group mb-3">
-                            <input class="form-control" placeholder="Vos allergies ici" {% if app.user %} value="{{ app.user.allergies }}" {% endif %}
-                            {{ form_widget(reservations.allergies) }}
+                            <input class="form-control" placeholder="Vos allergies ici" {% if app.user %} value="{{ app.user.allergies }}" {% endif %} {{ form_widget(reservations.allergies) }}                            
                         </div>
-                    </div>        
+                    </div>
+                    <p id="test"></p>        
                     
                 <button type="submit" class="modal-btn modalAdd">Réserver</a>
 
-                {{ form_end(reservations) }}
-                
-            </div>
-
+            {{ form_end(reservations) }}                
         </div>
-    </div>    
-
-
+    </div>
 {% endblock %}
+
 {% block scripts %}   
     <script src="pageReserver/jquery-ui-light/jquery-ui.js"></script>
     <script src="pageReserver/pageReserver.js"></script>

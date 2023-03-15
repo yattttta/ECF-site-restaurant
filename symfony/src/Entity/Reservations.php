@@ -29,11 +29,12 @@ class Reservations
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $time = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $date = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $allergies = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date = null;
 
     public function getId(): ?int
     {
@@ -100,18 +101,6 @@ class Reservations
         return $this;
     }
 
-    public function getDate(): ?string
-    {
-        return $this->date;
-    }
-
-    public function setDate(string $date): self
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
     public function getAllergies(): ?string
     {
         return $this->allergies;
@@ -120,6 +109,18 @@ class Reservations
     public function setAllergies(?string $allergies): self
     {
         $this->allergies = $allergies;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
