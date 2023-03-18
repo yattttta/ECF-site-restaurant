@@ -11,3 +11,11 @@
 #ui-datepicker-div {
     font-size: 12px;
 }
+
+.heure {
+    background-color: yellow;
+}
+
+.heure:hover {
+    border: solid;
+}
