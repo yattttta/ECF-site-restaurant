@@ -17,7 +17,7 @@ class TimeDisplayController extends AbstractController
             
             //récupération de la date selectionnée
             $date1 = $_POST['date'];
-            
+                        
             //récupération des données dans table réservation
             $statement = $pdo->prepare('SELECT time, convives FROM reservations WHERE date like ?');
             $statement->setFetchMode(PDO::FETCH_ASSOC).
@@ -34,22 +34,16 @@ class TimeDisplayController extends AbstractController
             //récupérer le jour de la semaine de la date selectionnée
             $infosDay = getdate($date1Ts);
             $weekDay = $infosDay['weekday'];
-            
-            //condition si le jour selectionné est un dimanche ou un lundi (restaurant fermé)
-            if ($weekDay === 'Sunday' || $weekDay === 'Monday') {
-                echo 'Nous sommes fermés ce jour ! <br>';
-            }
-
-            //comparer les deux dates entre elles
-            if ($date1Ts < $todayDateTs) {
-                echo 'Ce jour est déjà passé !';
-            }
-            
+                        
             //liste des horaires d'ouverture
             $horairesMidi = ["12h00", "12h15", "12h30", "12h45", "13h00"];
             $horairesSoir = ["19h00", "19h15", "19h30", "19h45", "20h00", "20h15", "20h30", "20h45", "21h00"];
+
+            //Initialisation nombre de convives
             $nbConvivesMidi = 0;
+            
             $nbConvivesSoir = 0;
+            
             
             //calculer le nombre de convives le midi
             for ($x = 0; $x < count($searchDateTime); $x++) {
@@ -59,8 +53,7 @@ class TimeDisplayController extends AbstractController
                     }
                 }
             }
-            echo 'il y a ' . $nbConvivesMidi . ' convives ce midi.<br>';
-
+        
             //calculer le nombre de convives le soir
             for ($y = 0; $y < count($searchDateTime); $y++) {
                 if(in_array($searchDateTime[$y]["time"], $horairesSoir)) {
@@ -69,47 +62,75 @@ class TimeDisplayController extends AbstractController
                     }
                 }
             }
-            echo 'il y a ' . $nbConvivesSoir . ' convives ce soir.<br>';
             
+            $nbPlacesMidiRestantes = 20 - $nbConvivesMidi;
+            $nbPlacesSoirRestantes = 20 - $nbConvivesSoir;
 
-            for ($i = 0; $i < count($searchDateTime); $i++) {
-                if (in_array($searchDateTime[$i]["time"], $horairesMidi)) {
-                    $keyFind = array_search($searchDateTime[$i]["time"], $horairesMidi);
-                    array_splice($horairesMidi,$keyFind,1);
-                }
-            }
-
-            //afichage des horaires disponibles le midi
+            
             echo '<div class="row" id="midi">';
-            for ($j = 0; $j < count($horairesMidi); $j++) {
-                echo '<div type="text" class="col heure ' . $horairesMidi[$j] . ' m-2" value="' . $horairesMidi[$j] . '" id="' . $horairesMidi[$j] . '">';
-                echo $horairesMidi[$j];
-                echo '</div>';
-                
-            }
-            echo '</div>';
+            //comparer les deux dates entre elles
+            if ($date1Ts < $todayDateTs) {
+                echo 'Ce jour est déjà passé !';
 
-            for ($k = 0; $k < count($searchDateTime); $k++) {
-                if (in_array($searchDateTime[$k]["time"], $horairesSoir)) {
-                    $keyFind = array_search($searchDateTime[$k]["time"], $horairesSoir);
-                    array_splice($horairesSoir,$keyFind,1);
+            //Bloquer les réservations si il y a déjà 20 convives le midi    
+            } elseif ($nbConvivesMidi > 19) {
+                echo 'Il n\' y a plus de place de libre au service du midi à cette date !';
+            //condition si le jour selectionné est un dimanche ou un lundi (restaurant fermé)    
+            } elseif ($weekDay === 'Sunday' || $weekDay === 'Monday') {
+                echo 'Nous sommes fermés ce jour ! <br>';
+
+            //afichage des horaires disponibles le midi    
+            } else {
+                echo 'il reste ' . $nbPlacesMidiRestantes . ' place(s) disponible pour le service du midi, veuillez ne pas en selectionner plus.<br>';
+                for ($j = 0; $j < count($horairesMidi); $j++) {
+                    echo '<div type="text" class="col heure ' . $horairesMidi[$j] . ' m-2" value="' . $horairesMidi[$j] . '" id="' . $horairesMidi[$j] . '">';
+                    echo $horairesMidi[$j];
+                    echo '</div>';                
                 }
             }
-            
-            //affichage des horaires disponibles du soir
-            echo '<div class="row" id="soir">';
-            for ($l = 0; $l < count($horairesSoir); $l++) {
-                echo '<div type="text" class="col heure m-2 ' . $horairesSoir[$l] . '" value="' . $horairesSoir[$l] . '" id="' . $horairesSoir[$l] . '">'; 
-                echo $horairesSoir[$l];
-                echo '</div>';
-            }
             echo '</div>';
             
+            echo '<div class="row" id="soir">';
+            //comparer les deux dates entre elles
+            if ($date1Ts < $todayDateTs) {
+            //Bloquer les réservations si il y a déjà 20 convives le midi     
+            } elseif ($nbConvivesSoir > 19 ) {
+                echo 'Il n\'y a plus de place au service du soir à cette date !';    
+            //condition si le jour selectionné est un dimanche ou un lundi (restaurant fermé)
+            } elseif ($weekDay === 'Sunday' || $weekDay === 'Monday') {               
+            //affichage des horaires disponibles du soir    
+            } else {
+                echo 'il reste ' . $nbPlacesSoirRestantes . ' place(s) disponible pour le service du soir, veuillez ne pas en selectionner plus.<br>';
+                for ($l = 0; $l < count($horairesSoir); $l++) {
+                    echo '<div type="text" class="col heure m-2 ' . $horairesSoir[$l] . '" value="' . $horairesSoir[$l] . '" id="' . $horairesSoir[$l] . '">'; 
+                    echo $horairesSoir[$l];
+                    echo '</div>';
+                }
+            }    
+            echo '</div>';
 
+
+            //Enlever les horaires du tableau du midi quand ils ont été réservés
+
+            //for ($i = 0; $i < count($searchDateTime); $i++) {
+            //    if (in_array($searchDateTime[$i]["time"], $horairesMidi)) {
+            //        $keyFind = array_search($searchDateTime[$i]["time"], $horairesMidi);
+            //        array_splice($horairesMidi,$keyFind,1);
+            //    }
+            //}
+
+            //Enlever les horaires du tableau du soir quand ils ont été réservés
+
+            //for ($k = 0; $k < count($searchDateTime); $k++) {
+            //    if (in_array($searchDateTime[$k]["time"], $horairesSoir)) {
+            //        $keyFind = array_search($searchDateTime[$k]["time"], $horairesSoir);
+            //        array_splice($horairesSoir,$keyFind,1);
+            //    }
+            //}
+            
         } catch (PDOException $e) {
             echo 'Impossible de récupérer les données';
         }
-
 
         return $this->render('time_display/timeDisplay.html.twig');
     }

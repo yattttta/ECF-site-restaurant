@@ -13,9 +13,13 @@
 }
 
 .heure {
-    background-color: yellow;
+    background-color: red;
+}
+.heure:hover {
+    background-color : gold;
 }
 
-.heure:hover {
-    border: solid;
+#reservations_time {
+    visibility: hidden;
 }
+
