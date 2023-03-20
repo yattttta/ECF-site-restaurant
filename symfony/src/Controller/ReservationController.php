@@ -36,6 +36,7 @@ class ReservationController extends AbstractController
         }
 
         return $this->render('reservation/reserver.html.twig', [
+            'controller_name' => 'ReservationController',
             'reservations' => $form,
         ]);
     }

@@ -43,6 +43,7 @@ class FormController extends AbstractController
         }
 
         return $this->render('form/form.html.twig', [
+            'controller_name' => 'FormController',
             'form' => $form->createView(),
         ]);
     }
