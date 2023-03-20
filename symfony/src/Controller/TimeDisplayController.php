@@ -12,8 +12,8 @@ class TimeDisplayController extends AbstractController
     #[Route(path:'/timeDisplay', name: 'app_time_display')]
     public function timeDisplay()
     {
-        if (getenv('JAWSDB_URL') !== false) {
-            $dbparts = parse_url(getenv('JAWSDB_URL'));
+        if (getenv('DATABASE_URL') !== false) {
+            $dbparts = parse_url(getenv('DATABASE_URL'));
         
             $hostname = $dbparts['host'];
             $username = $dbparts['user'];
