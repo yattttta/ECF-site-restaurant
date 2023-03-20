@@ -3,13 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Reservations;
-use App\Entity\InfoUser;
-use App\Repository\InfoUserRepository;
 use App\Form\ReservationsType;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
-use PDO;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,7 +22,6 @@ class ReservationController extends AbstractController
         $form = $this->createForm(ReservationsType::class, $reservations);
         $form->handleRequest($request);
 
-        $pdo = new PDO("mysql:host=localhost;dbname=restaurant", "root", "");
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $doctrine->getManager();
