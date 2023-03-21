@@ -1,10 +1,101 @@
-.texte {
-    color: blueviolet;
-    background-color: aqua;
+/* Vignette de réservation */
+.imgReserver {        
+    width: 15%;
+    float: right;
+    margin-right: 7vw;
+    box-shadow: 3px 2px 2px #F6AA1C;
+    
+}
+.imgReserver:hover {
+    transform: rotate(10deg);
+    
+}
+@media screen and (max-width: 850px) {
+    .reserve {
+        visibility: hidden;
+    }
+}  
+
+/* Bande de reservation */
+.reserveStrip {
+    height: 32vh;
+}
+.reserve2 {
+    margin-top: 22vh;
+    text-decoration: none;
+    font-size: 5vh;
+    color:#220901;
+    background-color: #fff3b0;
+    position: fixed;
+    z-index: 2;
+}
+@media screen and (min-width: 850px) {
+    .reserveStrip {
+        visibility: hidden;
+    }
+}
+/* Titre */
+.vide {
+    height: 23vh;
+}
+h1 {
+    font-family: 'Luminari', 'fantasy';
+    font-size: 9vh;
+    color: #220901;
+    font-weight: 800;
+}
+/* Banniere bienvenue */
+.welcomeStrip {
+    height: 20vh;
+    background-color: #BC3908;
+}  
+.welcome {
+    font-size: 4rem;
+    font-family: 'Luminari', 'fantasy';
+    color: #ffffff;
+} 
+/* Galerie photo */
+.slider {
+    width: 40vw; 
+    margin-left: 9vw;    
+    border: none;
+    
+} 
+.photo {
+    width: 40vw;   
 }
 
-.imgReserver {
-    border-radius: 50%;
-    border: solid;
-    background-color: blue;
+.ligne {   
+    margin-top: 10vh;
+}
+
+.decor {
+    background-color: #F6AA1C;
+    height: 0.3vh;
+    margin-top: 10vh;
+}
+.pres {
+    margin-top: 6vh;
+    font-size: 45px;
+    font-family: 'Luminari', 'fantasy';
+}
+/* Vignette menus */
+.txtMenu {
+    margin-left: 30vw;
+    padding-left: 5vw;
+}
+.imgMenu {
+    width: 25vw;
+}
+.decor2 {
+    padding-left: 10vw;
+}
+.lienCarte {
+    text-decoration: none;
+    color:#F6AA1C;
+    font-size: 32px;
+
+}
+.lienCarte:hover {
+    color: #941B0C;
 }

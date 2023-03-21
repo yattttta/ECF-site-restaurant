@@ -9,11 +9,9 @@
         {% block stylesheets %} {% endblock %}
         <title>Le Quai Antique</title>
         <meta name="description" content="Site du restaurant">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        
     </head>
     <body>         
-        <header class="container-fluid">
+        <header class="container-fluid" id="header">
             <div class="row barre">
                 <div class="col toggle">
                     <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-list ouvrir" viewBox="0 0 16 16">
@@ -24,33 +22,44 @@
                     </svg>              
                 </div>
                 <div class="menu">
-                    <ul>
-                        <li class="gestion"><a href="/accueil" class="lien">Page d'accueil</a></li>
-                        <li class="liste"><a href="/login" class="lien">Se connecter/Créer un compte</a></li>
-                        <li class="liste"><a href="/reservation" class="lien">Réserver</a></li>
-                        <li class="liste"><a href="#" class="lien">Contacts</a></li>
+                    <ul class="listeMenu fs-2 fw-semibold">
+                        <li class="gestion"><a href="/login" class="lien">SE CONNECTER</a></li>
+                        <li class="liste pt-4"><a href="/form" class="lien">CRÉER UN COMPTE</a></li>
+                        <li class="liste pt-4"><a href="/reservation" class="lien">RÉSERVER</a></li>
                     </ul>
                 </div>  
                 <div class="col restau d-flex justify-content-center">
-                    <a href="/accueil"><h1>Le Quai Antique</h1></a>
+                    <a class="titre" href="/"><h1 class="fw-semibold nom">Le Quai Antique</h1></a>
                 </div> 
                 <div class="col d-flex justify-content-end">
-                    <adress class="adress">38 place des montagnes , 73000 Chambéry</adress>
+                    <adress class="fs-5 fw-semibold lien pt-2 pe-2">38 place des montagnes<br><pre>     73000 Chambéry</adress>
                 </div>  
             </div>  
+            
             {% block body %}{% endblock %} 
         </header>
         {% block accueil %}{% endblock %}  
-        <footer class="container-fluid">
-            <h2 class="row">Horaires d'ouverture</h2>
-        </footer>
-          
+            <footer class="container-fluid">
+                <div class="row mt-5">
+                    
+                </div>
+        
+    
+            </footer> 
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <script src="navbar/navbar.js"></script>
         {% block scripts %}{% endblock %}
-        
-     
-    
+            
     </body>
-</html>
+</html>                
+                        
+                        
+                            
+                        
+                        
+                    
+                
+          
+        

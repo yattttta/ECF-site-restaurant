@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+    
+
     let recherche = document.querySelector("input[id=reservations_date]")
     let display = document.getElementById("test")
 
