@@ -26,25 +26,56 @@
                         <li class="gestion"><a href="/login" class="lien">SE CONNECTER</a></li>
                         <li class="liste pt-4"><a href="/form" class="lien">CRÉER UN COMPTE</a></li>
                         <li class="liste pt-4"><a href="/reservation" class="lien">RÉSERVER</a></li>
+                        <li class="liste pt-4"><a href="pageAccueil/Le_Quai_Antique.pdf" class="lien">NOTRE CARTE</a></li>
                     </ul>
                 </div>  
                 <div class="col restau d-flex justify-content-center">
-                    <a class="titre" href="/"><h1 class="fw-semibold nom">Le Quai Antique</h1></a>
+                    <a class="titre" href="/"><p class="fw-semibold nom">Le Quai Antique</p></a>
                 </div> 
                 <div class="col d-flex justify-content-end">
                     <adress class="fs-5 fw-semibold lien pt-2 pe-2">38 place des montagnes<br><pre>     73000 Chambéry</adress>
                 </div>  
             </div>  
             
-            {% block body %}{% endblock %} 
+            {% block header %}{% endblock %} 
         </header>
-        {% block accueil %}{% endblock %}  
-            <footer class="container-fluid">
-                <div class="row mt-5">
-                    
-                </div>
-        
-    
+        {% block body %}{% endblock %}  
+            <footer>
+                <div class="openHoursCard">
+                    <div class="card mt-5">
+                        <div class="card-title openHoursTitle d-flex justify-content-center">
+                            Nos horaires d'ouverture
+                        </div>
+                        
+                        <div class="row openHours">
+                            <div class="col dayTime">Lundi<br>
+                                                Mardi<br>
+                                                Mercredi<br>
+                                                Jeudi<br>
+                                                Vendredi<br>
+                                                Samedi<br>
+                                                Dimanche
+                            </div>
+                            <div class="col dayTime">Fermé<br>
+                                                12h00-14h00<br>
+                                                12h00-14h00<br> 
+                                                12h00-14h00<br> 
+                                                12h00-14h00<br> 
+                                                12h00-14h00<br> 
+                                                Fermé   
+                            </div>
+                            <div class="col dayTime">Fermé<br>
+                                            19h00-22h00<br>
+                                            19h00-22h00<br>
+                                            19h00-22h00<br>
+                                            19h00-22h00<br>
+                                            19h00-22h00<br>
+                                            Fermé<br>
+                            </div>
+                        <div>    
+                    </div>
+                <div>    
+                   
             </footer> 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
