@@ -1,22 +1,25 @@
-.card-img-top {
-    width: 25vw;
-    height: 30vh;
-}
-
 .carte {
     width: 50vw;
-    margin-top: 35vh;
+    margin-top: 25vh;
     
 }
+.card-img-top {
+    width: 15vw;
+    height: 18vh;
+}
+
+
 #ui-datepicker-div {
     font-size: 12px;
 }
 
 .heure {
-    background-color: red;
+    background-color: #fff3b0;
+    max-width: 5vw;
+    margin : 1vh;
 }
 .heure:hover {
-    background-color : gold;
+    background-color : #1b998b;
 }
 
 #reservations_time {
@@ -25,4 +28,12 @@
 
 .titre {
     visibility: visible;
+}
+.btn {
+    background-color: #621708;
+    border: none;
+    margin-top: 1.5vh;
+}
+.btn:hover {
+    background-color: #1b998b;
 }

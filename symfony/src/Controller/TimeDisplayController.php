@@ -95,12 +95,14 @@ class TimeDisplayController extends AbstractController
 
             //afichage des horaires disponibles le midi    
             } else {
-                echo 'il reste ' . $nbPlacesMidiRestantes . ' place(s) disponible pour le service du midi, veuillez ne pas en selectionner plus.<br>';
+                echo '<div class="col"><p>Il reste ' . $nbPlacesMidiRestantes . ' place(s) disponible pour le service du midi, veuillez ne pas en selectionner plus.</p><div>';
+                echo '<div class="row">';
                 for ($j = 0; $j < count($horairesMidi); $j++) {
-                    echo '<div type="text" class="col heure ' . $horairesMidi[$j] . ' m-2" value="' . $horairesMidi[$j] . '" id="' . $horairesMidi[$j] . '">';
+                    echo '<div type="text" class="col heure ' . $horairesMidi[$j] . '" value="' . $horairesMidi[$j] . '" id="' . $horairesMidi[$j] . '">';
                     echo $horairesMidi[$j];
                     echo '</div>';                
                 }
+                echo '</div>';
             }
             echo '</div>';
             
@@ -114,12 +116,14 @@ class TimeDisplayController extends AbstractController
             } elseif ($weekDay === 'Sunday' || $weekDay === 'Monday') {               
             //affichage des horaires disponibles du soir    
             } else {
-                echo 'il reste ' . $nbPlacesSoirRestantes . ' place(s) disponible pour le service du soir, veuillez ne pas en selectionner plus.<br>';
-                for ($l = 0; $l < count($horairesSoir); $l++) {
-                    echo '<div type="text" class="col heure m-2 ' . $horairesSoir[$l] . '" value="' . $horairesSoir[$l] . '" id="' . $horairesSoir[$l] . '">'; 
+                echo '<div class="col"><p>Il reste ' . $nbPlacesSoirRestantes . ' place(s) disponible pour le service du soir, veuillez ne pas en selectionner plus.</p><div>';
+                echo '<div class="row">';
+                for ($l = 0; $l < count($horairesSoir); $l++) {                    
+                    echo '<div type="text" class="col heure" ' . $horairesSoir[$l] . 'value="' . $horairesSoir[$l] . '" id="' . $horairesSoir[$l] . '">'; 
                     echo $horairesSoir[$l];
-                    echo '</div>';
-                }
+                    echo '</div>';                   
+                } 
+                echo '</div>';
             }    
             echo '</div>';
 

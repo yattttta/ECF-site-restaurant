@@ -6,8 +6,8 @@
 
 {% block header %}
     <div class="row">
-        <div class="card carte d-flex mx-auto p-3">
-            <img src="pageAccueil/imgReserver.jpg" class="card-img-top d-flex mx-auto" alt="...">
+        <div class="card carte d-flex mx-auto p-3 reservationCard">
+            <img src="pageAccueil/imgReserver.jpg" class="card-img-top d-flex mx-auto">
             <p class="card-text"> 
                 Pour tout retard de plus de 20 min votre table sera donnée à d'autres clients.<br>
                 20 convives maximum.
@@ -209,7 +209,8 @@
                             <input class="form-control" readonly required name="{{ reservations.time.vars.full_name }}" id="{{ reservations.time.vars.id}}"> 
                             {% do reservations.time.setRendered %}
                         </div>        
-                    </div>                    
+                    </div> 
+                                       
                     <div class="row lol" id="test"></div>  
                     {% do reservations.time.setRendered %} 
                      
