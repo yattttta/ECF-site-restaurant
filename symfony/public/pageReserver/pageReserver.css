@@ -25,10 +25,6 @@
 #reservations_time {
     visibility: hidden;
 }
-
-.titre {
-    visibility: visible;
-}
 .btn {
     background-color: #621708;
     border: none;

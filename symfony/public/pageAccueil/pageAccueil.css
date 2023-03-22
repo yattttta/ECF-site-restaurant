@@ -10,6 +10,9 @@
     transform: rotate(10deg);
     
 }
+.reserve {
+    font-family: "Luminari", "fantasy";
+}
 @media screen and (max-width: 850px) {
     .reserve {
         visibility: hidden;
@@ -19,6 +22,7 @@
 /* Bande de reservation */
 .reserveStrip {
     height: 32vh;
+    font-family: "Luminari", "fantasy";
 }
 .reserve2 {
     margin-top: 22vh;
@@ -27,6 +31,7 @@
     color:#220901;
     background-color: #fff3b0;
     position: fixed;
+    bottom: 0;
     z-index: 2;
 }
 @media screen and (min-width: 850px) {
@@ -39,10 +44,16 @@
     height: 23vh;
 }
 h1 {
-    font-family: 'Luminari', 'fantasy';
+    font-family: "Luminari", "fantasy";
     font-size: 9vh;
     color: #220901;
     font-weight: 800;
+    z-index: 1;
+}
+.titre {
+    text-decoration: none;
+    visibility: hidden;
+    transition: all 0.23s ease-in-out;
 }
 /* Banniere bienvenue */
 .welcomeStrip {
@@ -51,7 +62,6 @@ h1 {
 }  
 .welcome {
     font-size: 4rem;
-    font-family: 'Luminari', 'fantasy';
     color: #ffffff;
 } 
 /* Galerie photo */
@@ -77,7 +87,6 @@ h1 {
 .pres {
     margin-top: 6vh;
     font-size: 45px;
-    font-family: 'Luminari', 'fantasy';
 }
 /* Vignette menus */
 .txtMenu {
@@ -98,4 +107,7 @@ h1 {
 }
 .lienCarte:hover {
     color: #941B0C;
+}
+main {
+    font-family: "Luminari", "fantasy";
 }
