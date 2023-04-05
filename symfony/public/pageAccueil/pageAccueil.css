@@ -1,28 +1,27 @@
+.headerBlock {
+    font-family: 'Luminari';
+}
+
 /* Vignette de réservation */
 .imgReserver {        
     width: 15%;
-    float: right;
-    margin-right: 7vw;
     box-shadow: 3px 2px 2px #F6AA1C;
-    
+    border: 0.2px solid #F6AA1C ;
+    position: fixed;
+    right: 3vw;
 }
 .imgReserver:hover {
-    transform: rotate(10deg);
-    
+    transform: rotate(10deg);    
 }
-.reserve {
-    font-family: "Luminari", "fantasy";
-}
+  
 @media screen and (max-width: 850px) {
     .reserve {
-        visibility: hidden;
+        display: none;
     }
-}  
-
+}
 /* Bande de reservation */
 .reserveStrip {
     height: 32vh;
-    font-family: "Luminari", "fantasy";
 }
 .reserve2 {
     margin-top: 22vh;
@@ -32,7 +31,6 @@
     background-color: #fff3b0;
     position: fixed;
     bottom: 0;
-    z-index: 2;
 }
 @media screen and (min-width: 850px) {
     .reserveStrip {
@@ -44,7 +42,6 @@
     height: 23vh;
 }
 h1 {
-    font-family: "Luminari", "fantasy";
     font-size: 9vh;
     color: #220901;
     font-weight: 800;
@@ -55,6 +52,7 @@ h1 {
     visibility: hidden;
     transition: all 0.23s ease-in-out;
 }
+
 /* Banniere bienvenue */
 .welcomeStrip {
     height: 20vh;
@@ -63,51 +61,56 @@ h1 {
 .welcome {
     font-size: 4rem;
     color: #ffffff;
-} 
-/* Galerie photo */
-.slider {
-    width: 40vw; 
-    margin-left: 9vw;    
-    border: none;
     
 } 
-.photo {
-    width: 40vw;   
-}
 
-.ligne {   
-    margin-top: 10vh;
+/* Galerie photo */
+.photoRow {   
+    margin-top: 10vh;   
 }
-
+.carousel {    
+    width: 40vw;
+    margin-left: 10vw;
+}
 .decor {
     background-color: #F6AA1C;
     height: 0.3vh;
     margin-top: 10vh;
+    width: 20vh;
 }
-.pres {
-    margin-top: 6vh;
-    font-size: 45px;
+.txtBlock {
+    margin-top: 4.5vh;
+    font-size: 3rem;
+    color: #220901;
 }
+
 /* Vignette menus */
+.menuRow {
+    margin-top: 20vh;
+}
+.menuCol {
+    margin-left: 20vw;
+
+}
 .txtMenu {
-    margin-left: 30vw;
-    padding-left: 5vw;
+    font-size: 3rem;
+    margin-top: 4.5vh;
+    color: #220901;
+    margin-right: -2.25vw;
 }
-.imgMenu {
-    width: 25vw;
-}
-.decor2 {
-    padding-left: 10vw;
+.txtCarte {
+    font-size: 2.5rem;
+    margin-right: -2.25vw;
 }
 .lienCarte {
     text-decoration: none;
     color:#F6AA1C;
-    font-size: 32px;
-
 }
 .lienCarte:hover {
     color: #941B0C;
 }
-main {
-    font-family: "Luminari", "fantasy";
+.imgMenu {
+    width: 25vw;
 }
+
+

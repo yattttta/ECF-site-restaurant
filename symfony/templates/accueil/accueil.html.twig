@@ -5,6 +5,7 @@
     
 {% endblock %}
 {% block header %}
+<div class="headerBlock">
     <div class="row vide"></div>
     <div class="reserve">
         <a href="/reservation">
@@ -17,54 +18,55 @@
         <h1 class="d-flex mx-auto">Le Quai Antique</h1>
     </div>
     <div class="row reserveStrip">
-        <a href="/reservation" class="col reserve2">Réserver</a>
-    </div>       
+        <a href="/reservation" class="col reserve2 d-flex justify-content-center">Réserver une table</a>
+    </div> 
+</div>          
 {% endblock %}
 
-{% block body %}
-    <main class="container-fluid">
+{% block main %}    
         <div class="row welcomeStrip">
             <p class="welcome col d-flex justify-content-center align-items-center">Bienvenue</p>
-        </div>
-        
-        <article class="row ligne"> 
-            <div class="card slider my-auto">          
-                <div id="carouselExampleFade" class="col carousel slide carousel-fade">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="pageAccueil/images/img1.jpg" class="photo">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="pageAccueil/images/img2.jpg" class="photo">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="pageAccueil/images/img3.jpg" class="photo">
-                        </div>
+        </div>       
+        <article class="row photoRow">                                   
+            <div id="carouselExampleFade" class="col-3 carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="pageAccueil/images/img1.jpg" class="photo d-block w-100">
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="carousel-item">
+                        <img src="pageAccueil/images/img2.jpg" class="photo d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="pageAccueil/images/img3.jpg" class="photo d-block w-100">
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Précédent</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Suivant</span>
+                </button>
             </div>
-            <div class="col-2 decor"></div> 
-            <div class="col-2 pres">Présentation<br>en photos</div>    
-            
+            <div class="decor"></div> 
+            <div class="col-2 txtBlock">
+                <div class="row d-flex justify-content-center">Présentation</div>
+                <div class="row d-flex justify-content-center">en photos</div>                
         </article>
 
-        <article class="row ligne">
-            <div class="col-2 pres txtMenu">Nos Menus
-                <a href="pageAccueil/Le_Quai_Antique.pdf" class="lienCarte ms-5">La Carte</a>
-            </div>
-            <div class="col-2 decor decor2"></div> 
-            <img src="pageAccueil/images/imgMenu.jpg" class="imgMenu">           
+        <article class="row menuRow">
+            <div class="col-2 menuCol">
+                <div class="row txtMenu">
+                    <div class="d-flex justify-content-center">Nos Menus</div>
+                </div>    
+                <div class="row txtCarte">            
+                    <a href="pageAccueil/Le_Quai_Antique.pdf" class="lienCarte d-flex justify-content-center">La Carte</a>
+                </div>
+            </div>    
+            <div class="decor"></div> 
+            <img src="pageAccueil/images/imgMenu.jpg" class="col-3 imgMenu">           
         </article>
-    </main>    
-
 {% endblock %}
 {% block scripts %} <script src="pageAccueil/pageAccueil.js"></script> {% endblock %}
    
