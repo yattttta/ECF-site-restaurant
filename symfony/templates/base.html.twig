@@ -44,37 +44,48 @@
             {% block main %}{% endblock %} 
         </main>     
         <footer class="container-fluid">
-            <div class="row footerBarre">
-                <div class="col-4 openHoursCardBlock d-flex align-items-center ms-3">
-                    <div class="card openHoursCard">
-                        <div class="card-title openHoursTitle d-flex justify-content-center">
+            <div class="row footerBarre align-items-center">
+                <div class="col-4 openHoursCardBlock d-flex justify-content-center">
+                    <div class="openHoursCard">
+                        <div class="openHoursTitle d-flex justify-content-center align-items-center">
                             Nos horaires d'ouverture
                         </div>
                         
-                        <div class="row openHours">
-                            <div class="col dayTime">Lundi<br>
-                                                Mardi<br>
-                                                Mercredi<br>
-                                                Jeudi<br>
-                                                Vendredi<br>
-                                                Samedi<br>
-                                                Dimanche
+                        <div class="openHours">                            
+                            <div class="row">
+                                <div class="col d-flex justify-content-center day">Lundi</div>
+                                <div class="col d-flex justify-content-center">Fermé</div>
+                                <div class="col d-flex justify-content-center">Fermé</div>
+                            </div>    
+                            <div class="row mt-3">
+                                <div class="col d-flex justify-content-center day">Mardi</div>
+                                <div class="col d-flex justify-content-center">12h00-14h00</div>
+                                <div class="col d-flex justify-content-center">19h00-22h00</div>
                             </div>
-                            <div class="col dayTime">Fermé<br>
-                                                12h00-14h00<br>
-                                                12h00-14h00<br> 
-                                                12h00-14h00<br> 
-                                                12h00-14h00<br> 
-                                                12h00-14h00<br> 
-                                                Fermé   
+                            <div class="row mt-3">
+                                <div class="col d-flex justify-content-center day">Mercredi</div>
+                                <div class="col d-flex justify-content-center">12h00-14h00</div>
+                                <div class="col d-flex justify-content-center">19h00-22h00</div>
                             </div>
-                            <div class="col dayTime">Fermé<br>
-                                            19h00-22h00<br>
-                                            19h00-22h00<br>
-                                            19h00-22h00<br>
-                                            19h00-22h00<br>
-                                            19h00-22h00<br>
-                                            Fermé<br>
+                            <div class="row mt-3">
+                                <div class="col d-flex justify-content-center day">Jeudi</div>
+                                <div class="col d-flex justify-content-center">12h00-14h00</div>
+                                <div class="col d-flex justify-content-center">19h00-22h00</div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col d-flex justify-content-center day">Vendredi</div>
+                                <div class="col d-flex justify-content-center">12h00-14h00</div>
+                                <div class="col d-flex justify-content-center">19h00-22h00</div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col d-flex justify-content-center day">Samedi</div>
+                                <div class="col d-flex justify-content-center">12h00-14h00</div>
+                                <div class="col d-flex justify-content-center">19h00-22h00</div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col d-flex justify-content-center day">Dimanche</div>
+                                <div class="col d-flex justify-content-center">Fermé</div>
+                                <div class="col d-flex justify-content-center">Fermé</div>
                             </div>
                         <div>    
                     </div>

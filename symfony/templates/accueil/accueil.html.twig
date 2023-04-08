@@ -5,21 +5,12 @@
     
 {% endblock %}
 {% block header %}
-<div class="headerBlock">
-    <div class="row vide"></div>
-    <div class="reserve">
-        <a href="/reservation">
-            <img src="pageAccueil/images/imgReserver.jpg" alt="imgReserver" class="imgReserver rounded-circle">
-        </a>
-    </div>
-    
-    <div class="row vide"></div>
-    <div class="d-flex mx-auto">
-        <h1 class="d-flex mx-auto">Le Quai Antique</h1>
-    </div>
-    <div class="row reserveStrip">
-        <a href="/reservation" class="col reserve2 d-flex justify-content-center">Réserver une table</a>
-    </div> 
+<div class="headerBlock row align-items-center">        
+    <h1 class="col d-flex justify-content-center text-center">Le Quai Antique</h1>
+    <a href="/reservation" class="col reserve">
+        <img src="pageAccueil/images/imgReserver.jpg" alt="imgReserver" class="imgReserver rounded-circle">
+    </a>
+    <a href="/reservation" class="col reserveStrip d-flex justify-content-center">Réserver une table</a>    
 </div>          
 {% endblock %}
 
@@ -61,10 +52,10 @@
                     <div class="d-flex justify-content-center">Nos Menus</div>
                 </div>    
                 <div class="row txtCarte">            
-                    <a href="pageAccueil/Le_Quai_Antique.pdf" class="lienCarte d-flex justify-content-center">La Carte</a>
+                    <a href="pageAccueil/Le_Quai_Antique.pdf" class="lienCarte d-flex justify-content-center" target="_blank">La Carte</a>
                 </div>
             </div>    
-            <div class="decor"></div> 
+            <div class="decor" id="menuDecor"></div> 
             <img src="pageAccueil/images/imgMenu.jpg" class="col-3 imgMenu">           
         </article>
 {% endblock %}

@@ -1,7 +1,7 @@
 .headerBlock {
     font-family: 'Luminari';
+    height: 100%;
 }
-
 /* Vignette de réservation */
 .imgReserver {        
     width: 15%;
@@ -9,50 +9,24 @@
     border: 0.2px solid #F6AA1C ;
     position: fixed;
     right: 3vw;
+    top: 20vh;
 }
 .imgReserver:hover {
     transform: rotate(10deg);    
-}
-  
-@media screen and (max-width: 850px) {
-    .reserve {
-        display: none;
-    }
-}
-/* Bande de reservation */
-.reserveStrip {
-    height: 32vh;
-}
-.reserve2 {
-    margin-top: 22vh;
-    text-decoration: none;
-    font-size: 5vh;
-    color:#220901;
-    background-color: #fff3b0;
-    position: fixed;
-    bottom: 0;
-}
-@media screen and (min-width: 850px) {
-    .reserveStrip {
-        visibility: hidden;
-    }
-}
+}  
+
 /* Titre */
-.vide {
-    height: 23vh;
-}
 h1 {
     font-size: 9vh;
     color: #220901;
     font-weight: 800;
-    z-index: 1;
+    position: absolute;
 }
 .titre {
     text-decoration: none;
     visibility: hidden;
     transition: all 0.23s ease-in-out;
 }
-
 /* Banniere bienvenue */
 .welcomeStrip {
     height: 20vh;
@@ -60,37 +34,28 @@ h1 {
 }  
 .welcome {
     font-size: 4rem;
-    color: #ffffff;
-    
+    color: #ffffff;    
 } 
 
 /* Galerie photo */
 .photoRow {   
-    margin-top: 10vh;   
+    margin-top: 10vh;      
 }
 .carousel {    
     width: 40vw;
     margin-left: 10vw;
-}
-.decor {
-    background-color: #F6AA1C;
-    height: 0.3vh;
-    margin-top: 10vh;
-    width: 20vh;
 }
 .txtBlock {
     margin-top: 4.5vh;
     font-size: 3rem;
     color: #220901;
 }
-
 /* Vignette menus */
 .menuRow {
     margin-top: 20vh;
 }
 .menuCol {
     margin-left: 20vw;
-
 }
 .txtMenu {
     font-size: 3rem;
@@ -112,5 +77,69 @@ h1 {
 .imgMenu {
     width: 25vw;
 }
-
+@media screen and (min-width: 850px) {
+    .reserveStrip {
+        visibility: hidden;
+    }  
+    .decor {
+        background-color: #F6AA1C;
+        height: 0.3vh;
+        margin-top: 10vh;
+        width: 12vw;
+    }
+}
+@media screen and (max-width: 850px) {    
+    .reserve {
+        display: none;
+    }
+    /* Bande de reservation */
+    .reserveStrip {
+        text-decoration: none;
+        font-size: 5vh;
+        color:#220901;
+        background-color: #fff3b0;
+        position: fixed;
+        bottom: 0; 
+        z-index: 2;     
+    }
+    .carousel {
+        width: 95%;
+        margin: auto;
+    }
+    .decor {       
+        margin-top: 1vh;
+        margin-left: 15vw;
+        height: 6vh;
+        width: 1%;  
+        border-left: 0.3vh solid #F6AA1C        
+    } 
+    .txtBlock {        
+        width: 100%;
+        margin-top: -4vh;
+        font-size: 2rem;
+        color: #220901;
+    }
+    .menuRow {
+        flex-direction: column-reverse;
+    }
+    #menuDecor {
+        margin-left: 85vw;
+    }
+    .imgMenu {
+        width: 95%;
+        margin: auto;
+    }
+    .menuCol {
+        width: 100%;
+        margin-left: auto;
+        margin-top: -9vh;
+    }
+    .txtMenu {
+        font-size: 2rem;
+        color: #220901;
+    }
+    .txtCarte {
+        font-size: 1.5rem;
+    }
+}
 
