@@ -50,6 +50,9 @@ h1 {
     font-size: 3rem;
     color: #220901;
 }
+.photo {
+    border-radius: 5%;
+}
 /* Vignette menus */
 .menuRow {
     margin-top: 20vh;
