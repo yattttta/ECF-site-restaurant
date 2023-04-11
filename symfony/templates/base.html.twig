@@ -27,15 +27,23 @@
                         <li class="gestion"><a href="/login" class="lien">SE CONNECTER</a></li>
                         <li class="liste pt-4"><a href="/form" class="lien">CRÉER UN COMPTE</a></li>
                         <li class="liste pt-4"><a href="/reservation" class="lien">RÉSERVER</a></li>
-                        <li class="liste pt-4"><a href="pageAccueil/Le_Quai_Antique.pdf" class="lien">NOTRE CARTE</a></li>
+                        <li class="liste pt-4"><a href="pageAccueil/Le_Quai_Antique.pdf" class="lien" target="_blank">NOTRE CARTE</a></li>
                     </ul>
                 </div>  
-                <div class="col col-md-5 restau d-flex justify-content-center">
+                <div class="col col-md-5 restau d-flex justify-content-center align-items-center">
                     <a class="titre" href="/"><p class="fw-semibold nom">Le Quai Antique</p></a>
-                </div> 
-                <div class="col d-flex justify-content-end adresse">
-                    <adress class="fw-semibold lien">38 place des montagnes<br>73000 Chambéry</adress>
-                </div>  
+                </div>
+                <div class="col d-flex justify-content-end align-items-center pe-4 pb-3">
+                    {% if app.user %}
+                        <div class="connected">
+                            Bienvenue {{ app.user.prenom }}
+                            <a href="{{ path('app_logout') }}" class="d-flex justify-content-center">Se déconnecter</a>
+                        </div>
+                        {% else %}
+                        <a href="/login" class="lien d-flex align-items-center connected">SE CONNECTER</a></li>                       
+                    {% endif %}
+                </div>
+                  
             </div>  
             
             {% block header %}{% endblock %} 
@@ -44,8 +52,9 @@
             {% block main %}{% endblock %} 
         </main>     
         <footer class="container-fluid">
-            <div class="row footerBarre align-items-center">
-                <div class="col-4 openHoursCardBlock d-flex justify-content-center">
+            <div class="row footerBarre ">
+                <div class="col-4 openHoursCardBlock">
+
                     <div class="openHoursCard">
                         <div class="openHoursTitle d-flex justify-content-center align-items-center">
                             Nos horaires d'ouverture
@@ -87,10 +96,52 @@
                                 <div class="col d-flex justify-content-center time">Fermé</div>
                                 <div class="col d-flex justify-content-center time">Fermé</div>
                             </div>
-                        <div>    
+                        </div>    
                     </div>
-                <div>
-            </div>        
+
+                </div>
+                <div class="col">
+                    <div class="row d-flex justify-content-center contacts">Contacts</div>
+                    <div class="row lienContact text-center">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                            </svg>
+                            <adress class="fw-semibold lien ">38 place des montagnes 73000 Chambéry</adress>
+                        </span>
+                    </div>    
+                    <a href="https://www.facebook.com/" title="facebook" target="_blank" class="row lienContact">
+                        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M48 24C48 10.7438 37.2562 0 24 0C10.7438 0 0 10.7438 0 24C0 35.9813 8.775 45.9094 20.25 47.7094V30.9375H14.1562V24H20.25V18.7125C20.25 12.6984 23.8313 9.375 29.3156 9.375C31.9406 9.375 34.6875 9.84375 34.6875 9.84375V15.75H31.6594C28.6781 15.75 27.75 17.6016 27.75 19.5V24H34.4062L33.3422 30.9375H27.75V47.7094C39.225 45.9094 48 35.9813 48 24Z" fill="#1877F2"/>
+                            <path d="M33.3422 30.9375L34.4062 24H27.75V19.5C27.75 17.6016 28.6781 15.75 31.6594 15.75H34.6875V9.84375C34.6875 9.84375 31.9406 9.375 29.3156 9.375C23.8313 9.375 20.25 12.6984 20.25 18.7125V24H14.1562V30.9375H20.25V47.7094C21.4734 47.9016 22.725 48 24 48C25.275 48 26.5266 47.9016 27.75 47.7094V30.9375H33.3422Z" fill="white"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/?hl=fr" title="instagram" target="_blank" class="row lienContact">  
+                        <svg height="47" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;" version="1.1" viewBox="0 0 24 24" width="47" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect height="24" id="Artboard10" style="fill:none;" width="24" x="0" y="0"/>
+                            <path d="M22,7c0,-2.761 -2.239,-5 -5,-5c-3.054,0 -6.946,0 -10,0c-2.761,0 -5,2.239 -5,5c0,3.054 0,6.946 0,10c0,2.761 2.239,5 5,5c3.054,0 6.946,0 10,0c2.761,0 5,-2.239 5,-5c0,-3.054 0,-6.946 0,-10Z" style="fill:url(#_Radial1);"/>
+                            <path d="M14.958,5.005c2.091,0.02 4.016,1.815 4.037,4.037c0.007,1.972 0.007,3.944 0,5.916c-0.02,2.083 -1.815,4.016 -4.037,4.037c-1.972,0.007 -3.944,0.007 -5.916,0c-2.092,-0.02 -4.016,-1.815 -4.037,-4.037c-0.007,-1.972 -0.007,-3.944 0,-5.916c0.019,-2.093 1.81,-4.016 4.037,-4.037c1.972,-0.007 3.944,-0.007 5.916,0Zm-5.889,0.945c-1.623,0.005 -3.103,1.412 -3.119,3.098c-0.006,1.968 -0.006,3.936 0,5.904c0.015,1.605 1.388,3.082 3.098,3.098c1.968,0.006 3.936,0.006 5.904,0c1.609,-0.015 3.082,-1.388 3.098,-3.098c0.006,-1.968 0.006,-3.936 0,-5.904c-0.015,-1.616 -1.415,-3.082 -3.098,-3.098c-1.961,-0.006 -3.922,0 -5.883,0Z" style="fill:#fff;fill-rule:nonzero;"/>
+                            <path d="M12.024,8.5c1.618,0.015 3.126,1.263 3.422,2.862c0.211,1.14 -0.187,2.376 -1.027,3.178c-0.935,0.89 -2.382,1.208 -3.622,0.754c-1.386,-0.507 -2.361,-1.968 -2.296,-3.448c0.079,-1.768 1.641,-3.34 3.499,-3.346c0.008,0 0.016,0 0.024,0Zm-0.04,0.947c-1.155,0.011 -2.244,0.887 -2.484,2.025c-0.243,1.151 0.419,2.428 1.506,2.887c1.187,0.502 2.72,-0.061 3.293,-1.233c0.593,-1.211 0.034,-2.856 -1.218,-3.441c-0.341,-0.159 -0.72,-0.239 -1.097,-0.238Z" style="fill:#fff;fill-rule:nonzero;"/>
+                            <path d="M16.5,8.227c0,-0.193 -0.077,-0.378 -0.213,-0.514c-0.136,-0.136 -0.321,-0.213 -0.514,-0.213c-0.015,0 -0.031,0 -0.046,0c-0.193,0 -0.378,0.077 -0.514,0.213c-0.136,0.136 -0.213,0.321 -0.213,0.514c0,0.008 0,0.015 0,0.023c0,0.199 0.079,0.39 0.22,0.53c0.14,0.141 0.331,0.22 0.53,0.22c0,0 0,0 0,0c0.414,0 0.75,-0.336 0.75,-0.75c0,-0.008 0,-0.015 0,-0.023Z" style="fill:#fff;"/>
+                            <defs>
+                                <radialGradient cx="0" cy="0" gradientTransform="matrix(27.933,0,0,27.933,2,21.5)" gradientUnits="userSpaceOnUse" id="_Radial1" r="1">
+                                    <stop offset="0" style="stop-color:#ff8100;stop-opacity:1"/>
+                                    <stop offset="0.19" style="stop-color:#ff7209;stop-opacity:1"/>
+                                    <stop offset="0.32" style="stop-color:#f55e16;stop-opacity:1"/>
+                                    <stop offset="0.48" style="stop-color:#d92938;stop-opacity:1"/>
+                                    <stop offset="1" style="stop-color:#9100ff;stop-opacity:1"/>
+                                </radialGradient>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/?lang=fr" title="twitter" target="_blank" class="row lienContact">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                        </svg>
+                    </a>       
+                </div>       
+            </div>  
+             
                 
         </footer> 
 

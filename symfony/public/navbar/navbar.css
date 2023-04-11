@@ -45,8 +45,11 @@ header {
 }
 .nom {
     font-size: 6vh;
-    color: #220901;
-    
+    color: #220901;    
+}
+.connected {
+    font-size: 2vh;
+    font-weight: 900;
 }
 .nom:hover {
     color: #941B0C;
@@ -96,7 +99,8 @@ footer {
     margin: 1.5vw;
 }
 .openHoursCard {
-    width: 100%;    
+    width: 100%;   
+    
 }
 .openHoursTitle {
     height: 4vh;
@@ -107,24 +111,33 @@ footer {
     color: #220901;
 }
 .openHours {
-    background-color: whitesmoke;
+    background-color: whitesmoke; 
     color: #220901;
     font-size: 2vh;
 }
 .time {
     color:#F6AA1C;
 }
+.contacts {
+    margin-top: 1.5vw;
+    font-size: 3vh;
+} 
+.lienContact {
+    text-decoration: none;
+    margin-top: 2vh;
+}
+
 
 
 @media screen and (max-width: 850px) {
     .menu {
         width: 100%;
     }
-    adress {
-        display: none;
-    }
     .nom {
         font-size: 3vh;
+    }
+    .connected {
+        font-size: 1.5vh;
     }
     .openHoursCardBlock {
         width: 100%;  
@@ -133,5 +146,5 @@ footer {
         margin-top: 1.5vh;
         margin-bottom: 1.5vh;      
     }
-    
+
 }
