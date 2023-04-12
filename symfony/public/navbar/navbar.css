@@ -87,7 +87,6 @@ main {
 /* Footer */
 footer { 
     position: relative;
-    margin-top: 10vh;
     background-color: #fff3b0;
     font-family: 'Luminari';
     z-index: 3;
@@ -137,7 +136,7 @@ footer {
         font-size: 3vh;
     }
     .connected {
-        font-size: 1.2vh;
+        font-size: 1.4vh;
     }
     .openHoursCardBlock {
         width: 100%;  

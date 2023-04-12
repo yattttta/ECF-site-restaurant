@@ -28,6 +28,9 @@ h1 {
     transition: all 0.23s ease-in-out;
 }
 /* Banniere bienvenue */
+main {
+    margin-bottom: 10vh;
+}
 .welcomeStrip {
     height: 20vh;
     background-color: #BC3908;

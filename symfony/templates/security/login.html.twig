@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link href="pageReserver/pageReserver.css" rel="stylesheet" type="text/css">
+    <link href="pageConnexion/login.css" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block header %}
-
     <div class="row">
-        <div class="card carte d-flex mx-auto p-3">
+        <div class="card connexionBlock d-flex mx-auto p-3">
             <div class="card-body">
                 <h5 class="card-title text-center">Connexion</h5>
                 <p class="card-text">
@@ -16,22 +15,23 @@
                         {% endif %}
                         
                         <div class="mb-3">
-                            <p>Vous n'avez pas de compte client ? Créez-en un ici : <a href="/form">Créer un compte</a></li>
+                            Vous n'avez pas de compte client ? Créez-en un ici : <a href="/form" class="create">Créer un compte</a>
                         </div>
                         <div class="mb-3">
-                            <label for="inputEmail" class="form-label">Email</label>
+                            <label for="inputEmail" class="form-label mailPass">Email</label>
                             <input type="email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
                         </div>
                         <div class="mb-3">
-                            <label for="inputPassword" class="form-label">Mot de passe</label>
+                            <label for="inputPassword" class="form-label mailPass">Mot de passe</label>
                             <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>   
                         </div>
-                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                        <button type="submit" id="btn" class="btn btn-primary d-flex mx-auto">Se connecter</button>
+                        <div class="secoBlock">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <button type="submit" id="btn" class="btn btn-primary d-flex mx-auto seco2">SE CONNECTER</button>
+                        </div>
                     </form>
                 </p>
             </div>
         </div>   
     </div>                    
-
 {% endblock %}

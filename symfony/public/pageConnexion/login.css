@@ -1,0 +1,45 @@
+.connexionBlock {
+    width: 50vw;
+    margin-top: 25vh;
+    box-shadow: 0 0 5px #F6AA1C;  
+    font-family: "luminari";  
+}
+.card-title {    
+    font-size: 6vh;
+    color: #941B0C;
+}
+.create {    
+    color: #F6AA1C;
+}
+.create:hover {
+    color: #941B0C;
+}
+.mailPass {
+    color: #941B0C;
+    font-size: 2vh;
+}
+.secoBlock {
+    margin-top: 3.5vh;
+}
+.seco2 {
+    background-color:#F6AA1C;
+    border: 1px solid #F6AA1C;
+    letter-spacing: 0.1rem;
+}
+.seco:hover {
+    background-color: #941B0C;
+    border: 1px solid #941B0C;
+}
+#inputEmail, #inputPassword {
+    box-shadow: 0 0 5px #941B0C;  
+}
+#inputEmail:focus, #inputPassword:focus {
+    box-shadow: 0 0 5px #F6AA1C;
+    border: 1px solid #F6AA1C;
+}
+
+@media screen and (max-width: 850px) {
+    .connexionBlock {
+        width: 90%;
+    }
+}
