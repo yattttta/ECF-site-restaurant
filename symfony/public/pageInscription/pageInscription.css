@@ -12,12 +12,13 @@
 .input-group {
     padding-top: 2vh;
 }
-
+.eye {
+    display: none;
+}
 .sinsc {
     margin-top: 2vh;
     background-color:#F6AA1C;
-    border: 1px solid #F6AA1C;   
-    color: #941B0C;
+    border: 1px solid #F6AA1C;
     font-weight: 600;
 }
 .sinsc:hover {
@@ -27,7 +28,7 @@
 }
 .input-group-text, input, select {
     box-shadow: 0 0 2px #941B0C; 
-    background-color: #F6AA1C; 
+    background-color: #1b998b;
 }
 .form-control:focus, .form-select:focus {
     box-shadow: 0 0 5px #F6AA1C;
