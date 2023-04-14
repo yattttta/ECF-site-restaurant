@@ -13,12 +13,6 @@
                 20 convives maximum.
             </p>
 
-            {% if app.user %}
-                <div class="mb-3">
-                Bienvenue {{ app.user.nom }} {{ app.user.prenom }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
-                </div>
-            {% endif %}
-
             {{ form_start(reservations) }}
                 <div class="row card-body"> 
                     <div class="row">
@@ -116,7 +110,11 @@
                                 </svg>
                             </span>
                             <select class="form-select" required name="{{ reservations.convives.vars.full_name }}" id="{{ reservations.convives.vars.id}}">
-                                <option value="">Nombre de convives
+                                {% if app.user %} 
+                                    <option value="{{ app.user.convives }}">{{ app.user.convives }}</option>
+                                    {% else %}
+                                    <option value="">Nombre de convives</option>
+                                {% endif %}    
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
