@@ -106,7 +106,7 @@ footer {
     width: 100%;
     background-color: #1b998b;
     font-size: 3vh;
-    font-weight: 600;
+    font-weight: 800;
     color: #220901;
 }
 .openHours {
@@ -114,8 +114,12 @@ footer {
     color: #220901;
     font-size: 2vh;
 }
+.day {
+    font-weight: 800;
+}
 .time {
-    color:#F6AA1C;
+    color:#621708;
+    font-weight: 600;
 }
 .contacts {
     margin-top: 1.5vw;
