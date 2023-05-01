@@ -1,18 +1,16 @@
 .carte {
-    width: 50vw;
-    margin-top: 25vh;
-    
+    margin-top: 25vh; 
+    box-shadow: 0 0 5px #F6AA1C;     
 }
 .card-img-top {
     width: 15vw;
-    height: 18vh;
+    height: 20vh;
+    
 }
-
 
 #ui-datepicker-div {
     font-size: 12px;
 }
-
 .heure {
     background-color: #fff3b0;
     max-width: 5vw;
@@ -21,15 +19,41 @@
 .heure:hover {
     background-color : #1b998b;
 }
-
 #reservations_time {
     visibility: hidden;
 }
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 5px #F6AA1C;
+    border: 1px solid #F6AA1C;
+}
 .btn {
-    background-color: #621708;
+    background-color: #F6AA1C;
     border: none;
     margin-top: 1.5vh;
 }
 .btn:hover {
     background-color: #1b998b;
+}
+@media screen and (min-width: 850px) {
+    .carte {
+        width: 50vw;
+    }
+}
+@media screen and (max-width: 850px) {
+    header, .fond {
+        height: 150vh;
+    }
+    .carte {
+        background-color: aqua;
+        width: 100%;   
+    }
+    .card-img-top {
+        width: 100%;
+    }
+    
+    
+    .card-body {
+        width: 100%;
+        background-color: red;
+    }
 }

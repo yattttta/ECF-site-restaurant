@@ -1,8 +1,7 @@
 .card {
     width: 50vw;
     margin-top: 25vh;
-    box-shadow: 0 0 5px #F6AA1C; 
-    
+    box-shadow: 0 0 5px #F6AA1C;     
 }
 .card-title {    
     font-size: 5vh;
@@ -37,5 +36,12 @@
 @media screen and (max-width: 850px) {
     .card {
         width: 95%;
+        margin-top: 17vh;
+    }
+    .card-title {
+        font-size: 4vh;
+    }
+    .input-group {
+        padding-top: 1.5vh;
     }
 }

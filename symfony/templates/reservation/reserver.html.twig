@@ -5,30 +5,31 @@
 {% endblock %}
 
 {% block header %}
-    <div class="row">
-        <div class="card carte d-flex mx-auto p-3 reservationCard">
-            <img src="pageAccueil/images/imgReserver.jpg" class="card-img-top d-flex mx-auto">
+    <div class="row justify-content-center">
+        <div class="card carte">
+            <img src="pageAccueil/images/imgReserver.jpg" class="card-img-top mx-auto">
             <p class="card-text"> 
                 Pour tout retard de plus de 20 min votre table sera donnée à d'autres clients.<br>
                 20 convives maximum.
             </p>
-
             {{ form_start(reservations) }}
-                <div class="row card-body"> 
+                <div class="card-body">
+
                     <div class="row">
-                        <div class="col input-group mb-3">
+                        <div class="col-12 col-md input-group inputLastName">
                             <span class="input-group-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                                 </svg>
                             </span>
-                            <input type="text" class="form-control" placeholder="Nom" required name="{{ reservations.nom.vars.full_name }}" id="{{ reservations.nom.vars.id }}" 
+                            <input type="text" class="form-control lastName" placeholder="Nom" required name="{{ reservations.nom.vars.full_name }}" id="{{ reservations.nom.vars.id }}" 
                             {% if app.user %} value="{{ app.user.nom }}" {% endif %}>  
                             {% do reservations.nom.setRendered %} 
-                                                                                         
+                            
+                                                                                        
                         </div>
-                        <div class="col input-group mb-3">
+                        <div class="col-12 col-md input-group inputName">
                             <span class="input-group-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -40,8 +41,8 @@
                             {% do reservations.prenom.setRendered %}
                         </div>
                     </div>
-                    <div class="row">        
-                        <div class="col input-group mb-3">
+                    <div class="row">
+                        <div class="col-12 col-md input-group">
                             <span class="input-group-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
                                     <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
@@ -51,8 +52,8 @@
                             <input class="form-control" type="email" placeholder="Email" required name="{{ reservations.email.vars.full_name }}" id="{{ reservations.email.vars.id }}" 
                             {% if app.user %} value="{{ app.user.email }}" {% endif %}>  
                             {% do reservations.email.setRendered %}
-                        </div>                       
-                        <div class="col input-group mb-3">                   
+                        </div>  
+                        <div class="col-12 col-md input-group">                 
                             <span class="input-group-text">
                                 <svg height="16px" width="16px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
                                 <g>
@@ -137,10 +138,10 @@
                                 <option value="20">20</option>
                             </select> 
                             {% do reservations.convives.setRendered %}                                        
-                        </div> 
-                    </div>
-                    <div class="row">     
-                        <div class="col input-group mb-3">
+                        </div>
+                    </div> 
+                    <div class="row"> 
+                        <div class="col-12 col-md input-group">
                             <span class="input-group-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
                                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
@@ -149,7 +150,19 @@
                             </span>
                             {{ form_widget(reservations.date) }}                   
                         </div>
-                        <div class="col input-group mb-3">
+                        <div class="col-12 col-md input-group">
+                            <span class="input-group-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                </svg>
+                            </span>
+                            <input class="form-control" readonly required name="{{ reservations.time.vars.full_name }}" id="{{ reservations.time.vars.id}}"> 
+                            {% do reservations.time.setRendered %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
                             <span class="input-group-text">
                                 <svg width="18px" height="18px" viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <style type="text/css">
@@ -196,20 +209,8 @@
                             {% do reservations.allergies.setRendered %}                          
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col input-group mb-3">
-                            <span class="input-group-text">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
-                                </svg>
-                            </span>
-                            <input class="form-control" readonly required name="{{ reservations.time.vars.full_name }}" id="{{ reservations.time.vars.id}}"> 
-                            {% do reservations.time.setRendered %}
-                        </div>        
-                    </div> 
-                                       
-                    <div class="row lol" id="test"></div>  
+                                 
+                    <div class="row" id="test"></div>  
                     {% do reservations.time.setRendered %} 
                      
                     <div class="row">
