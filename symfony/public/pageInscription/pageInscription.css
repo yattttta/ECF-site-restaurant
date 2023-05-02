@@ -14,6 +14,7 @@
 .eye {
     display: none;
 }
+
 .sinsc {
     margin-top: 2vh;
     background-color:#F6AA1C;
@@ -27,7 +28,7 @@
 }
 .input-group-text, input, select {
     box-shadow: 0 0 2px #941B0C; 
-    background-color: #1b998b;
+    
 }
 .form-control:focus, .form-select:focus {
     box-shadow: 0 0 5px #F6AA1C;

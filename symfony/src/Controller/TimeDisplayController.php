@@ -95,10 +95,10 @@ class TimeDisplayController extends AbstractController
 
             //afichage des horaires disponibles le midi    
             } else {
-                echo '<div class="col"><p>Il reste ' . $nbPlacesMidiRestantes . ' place(s) disponible pour le service du midi, veuillez ne pas en selectionner plus.</p><div>';
+                echo '<div class="col">Il reste ' . $nbPlacesMidiRestantes . ' place(s) disponible pour le service du midi.<div>';
                 echo '<div class="row">';
                 for ($j = 0; $j < count($horairesMidi); $j++) {
-                    echo '<div type="text" class="col heure ' . $horairesMidi[$j] . '" value="' . $horairesMidi[$j] . '" id="' . $horairesMidi[$j] . '">';
+                    echo '<div type="text" class="col-3 col-md-1 heure ' . $horairesMidi[$j] . '" value="' . $horairesMidi[$j] . '" id="' . $horairesMidi[$j] . '">';
                     echo $horairesMidi[$j];
                     echo '</div>';                
                 }
@@ -109,17 +109,17 @@ class TimeDisplayController extends AbstractController
             echo '<div class="row" id="soir">';
             //comparer les deux dates entre elles
             if ($date1Ts < $todayDateTs) {
-            //Bloquer les réservations si il y a déjà 20 convives le midi     
+            //Bloquer les réservations s'il y a déjà 20 convives le midi     
             } elseif ($nbConvivesSoir > 19 ) {
                 echo 'Il n\'y a plus de place au service du soir à cette date !';    
             //condition si le jour selectionné est un dimanche ou un lundi (restaurant fermé)
             } elseif ($weekDay === 'Sunday' || $weekDay === 'Monday') {               
             //affichage des horaires disponibles du soir    
             } else {
-                echo '<div class="col"><p>Il reste ' . $nbPlacesSoirRestantes . ' place(s) disponible pour le service du soir, veuillez ne pas en selectionner plus.</p><div>';
+                echo '<div class="col">Il reste ' . $nbPlacesSoirRestantes . ' place(s) disponible pour le service du soir.<div>';
                 echo '<div class="row">';
                 for ($l = 0; $l < count($horairesSoir); $l++) {                    
-                    echo '<div type="text" class="col heure" ' . $horairesSoir[$l] . 'value="' . $horairesSoir[$l] . '" id="' . $horairesSoir[$l] . '">'; 
+                    echo '<div type="text" class="col-3 col-md-1 heure" ' . $horairesSoir[$l] . 'value="' . $horairesSoir[$l] . '" id="' . $horairesSoir[$l] . '">'; 
                     echo $horairesSoir[$l];
                     echo '</div>';                   
                 } 

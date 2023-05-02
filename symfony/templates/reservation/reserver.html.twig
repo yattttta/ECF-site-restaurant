@@ -41,6 +41,7 @@
                             {% do reservations.prenom.setRendered %}
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-12 col-md input-group">
                             <span class="input-group-text">
@@ -110,7 +111,7 @@
                                     c8.754-8.754,13.48-20.868,12.969-33.238C441.82,439.631,436.141,427.982,426.745,419.983z"/>
                                 </svg>
                             </span>
-                            <select class="form-select" required name="{{ reservations.convives.vars.full_name }}" id="{{ reservations.convives.vars.id}}">
+                            <select class="form-select" required name="{{ reservations.convives.vars.full_name }}" id="{{ reservations.convives.vars.id }}">
                                 {% if app.user %} 
                                     <option value="{{ app.user.convives }}">{{ app.user.convives }}</option>
                                     {% else %}
@@ -140,15 +141,16 @@
                             {% do reservations.convives.setRendered %}                                        
                         </div>
                     </div> 
-                    <div class="row"> 
-                        <div class="col-12 col-md input-group">
+                    <div class="row">
+                        <div class="col-12 col-md input-group ">
                             <span class="input-group-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
                                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
                                     <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
                                 </svg>
                             </span>
-                            {{ form_widget(reservations.date) }}                   
+                            <input type="date" class="datepicker" required name="{{ reservations.date.vars.full_name }}" id="{{ reservations.date.vars.id }}">
+                            {% do reservations.date.setRendered %}                   
                         </div>
                         <div class="col-12 col-md input-group">
                             <span class="input-group-text">
@@ -162,7 +164,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-group">
+                        <div class="col-2 col-md input-group">
                             <span class="input-group-text">
                                 <svg width="18px" height="18px" viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <style type="text/css">

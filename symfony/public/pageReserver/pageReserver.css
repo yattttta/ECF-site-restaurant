@@ -4,17 +4,19 @@
 }
 .card-img-top {
     width: 15vw;
-    height: 20vh;
-    
+    height: 20vh;    
 }
-
-#ui-datepicker-div {
-    font-size: 12px;
+.input-group {
+    margin-bottom: 1vh;
+}
+.datepicker {
+    box-shadow: 0 0 2px #941B0C; 
 }
 .heure {
     background-color: #fff3b0;
-    max-width: 5vw;
-    margin : 1vh;
+    margin-right: 0.5vw;
+    margin-bottom: 0.5vh; 
+    margin-top: 0.5vh;
 }
 .heure:hover {
     background-color : #1b998b;
@@ -44,16 +46,12 @@
         height: 150vh;
     }
     .carte {
-        background-color: aqua;
         width: 100%;   
     }
     .card-img-top {
         width: 100%;
-    }
-    
-    
+    }    
     .card-body {
         width: 100%;
-        background-color: red;
     }
 }
