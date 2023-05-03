@@ -21,17 +21,19 @@ class ReservationController extends AbstractController
 
         $form = $this->createForm(ReservationsType::class, $reservations);
         $form->handleRequest($request);
-
+        $test = false;
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $doctrine->getManager();
             $em->persist($reservations);
             $em->flush();
+            $test = true;
         }
 
         return $this->render('reservation/reserver.html.twig', [
             'controller_name' => 'ReservationController',
             'reservations' => $form,
+            'test' => $test,
         ]);
     }
 }

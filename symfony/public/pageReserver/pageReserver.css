@@ -36,6 +36,31 @@
 .btn:hover {
     background-color: #1b998b;
 }
+.modale {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    background-color: rgba(77, 77, 77, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.modale-content {
+    background-color: white;
+    padding: 1.5em 2em;
+    width: 400px;
+    max-width: 90%;
+    border-radius: 4px;
+    position: relative;
+}
+.modale-close {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    text-decoration: none;
+}
 @media screen and (min-width: 850px) {
     .carte {
         width: 50vw;
