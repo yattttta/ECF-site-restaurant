@@ -26,8 +26,8 @@
     border: 1px solid #F6AA1C;
 }
 .seco:hover {
-    background-color: #941B0C;
-    border: 1px solid #941B0C;
+    background-color: #1b998b;
+    border: 1px solid #1b998b;
 }
 #inputEmail, #inputPassword {
     box-shadow: 0 0 2px #941B0C;  
@@ -36,7 +36,6 @@
     box-shadow: 0 0 5px #F6AA1C;
     border: 1px solid #F6AA1C;
 }
-
 @media screen and (max-width: 850px) {
     .connexionBlock {
         width: 90%;

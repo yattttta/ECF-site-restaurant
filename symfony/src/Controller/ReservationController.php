@@ -15,25 +15,23 @@ class ReservationController extends AbstractController
     #[Route('/reservation', name: 'app_reservation')]
     public function reservations(Request $request, ManagerRegistry $doctrine): Response
     {
-        
-
         $reservations = new Reservations;
 
         $form = $this->createForm(ReservationsType::class, $reservations);
         $form->handleRequest($request);
-        $test = false;
+        $modal = false;
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $doctrine->getManager();
             $em->persist($reservations);
             $em->flush();
-            $test = true;
+            $modal = true;
         }
 
         return $this->render('reservation/reserver.html.twig', [
             'controller_name' => 'ReservationController',
             'reservations' => $form,
-            'test' => $test,
+            'modal' => $modal,
         ]);
     }
 }

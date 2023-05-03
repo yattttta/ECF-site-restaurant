@@ -22,9 +22,8 @@
     font-weight: 600;
 }
 .sinsc:hover {
-    background-color: #941B0C;
-    border: 1px solid #941B0C;
-    color: #F6AA1C;
+    background-color: #1b998b;
+    border: 1px solid #1b998b;
 }
 .input-group-text, input, select {
     box-shadow: 0 0 2px #941B0C; 
@@ -33,6 +32,31 @@
 .form-control:focus, .form-select:focus {
     box-shadow: 0 0 5px #F6AA1C;
     border: 1px solid #F6AA1C;
+}
+.modale2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    background-color: rgba(77, 77, 77, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.modale-content2 {
+    background-color: white;
+    padding: 1.5em 2em;
+    width: 400px;
+    max-width: 90%;
+    border-radius: 4px;
+    position: relative;
+}
+.modale-close2 {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    text-decoration: none;
 }
 @media screen and (max-width: 850px) {
     .card {

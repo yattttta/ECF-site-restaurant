@@ -24,6 +24,7 @@ class FormController extends AbstractController
 
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
+        $modal2 = false;
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -36,11 +37,13 @@ class FormController extends AbstractController
             $em = $doctrine->getManager();
             $em->persist($user);
             $em->flush();
+            $modal2 = true;
         }
 
         return $this->render('form/form.html.twig', [
             'controller_name' => 'FormController',
             'form' => $form->createView(),
+            'modal2' => $modal2, 
         ]);
     }
 }
