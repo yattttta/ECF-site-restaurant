@@ -142,7 +142,7 @@
                         </div>
                     </div> 
                     <div class="row">
-                        <div class="col-12 col-md input-group ">
+                        <div class="col-12 col-md input-group" id="dateBlock">
                             <span class="input-group-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
                                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
@@ -152,6 +152,20 @@
                             <input type="date" class="datepicker" required name="{{ reservations.date.vars.full_name }}" id="{{ reservations.date.vars.id }}">
                             {% do reservations.date.setRendered %}                   
                         </div>
+
+
+                        <div class="col-12 col-md input-group dateClone" id="dateCloneBlock">
+                            <span class="input-group-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
+                                    <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                                </svg>
+                            </span>
+                            <input type="date" disabled="disabled" id="dateClone">                 
+                        </div>
+
+
+
                         <div class="col-12 col-md input-group">
                             <span class="input-group-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
@@ -159,12 +173,12 @@
                                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
                                 </svg>
                             </span>
-                            <input class="form-control" readonly required name="{{ reservations.time.vars.full_name }}" id="{{ reservations.time.vars.id}}"> 
+                            <input class="form-control" disabled="disabled" required name="{{ reservations.time.vars.full_name }}" id="{{ reservations.time.vars.id}}"> 
                             {% do reservations.time.setRendered %}
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-2 col-md input-group">
+                    <div class="row mb-3">
+                        <div class="col-12 col-md input-group">
                             <span class="input-group-text">
                                 <svg width="18px" height="18px" viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <style type="text/css">
@@ -210,17 +224,43 @@
                             {% if app.user %} value="{{ app.user.allergies }}" {% endif %}>  
                             {% do reservations.allergies.setRendered %}                          
                         </div>
+                        <div class="col-12 col-md"></div>
                     </div>
-                                 
-                    <div class="row" id="test"></div>  
-                    {% do reservations.time.setRendered %}  
+                    <div class="col-12" id="timeBlock">             
+                        <div id="test"></div>
+                    </div>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" id="modalButton">
+                        Choisir un horaire
+                    </button>
+                    <!-- Button reserver -->
                     <div class="row">
                         <div class="col d-flex mx-auto">
                             <button type="submit" class="btn btn-primary btn-lg mx-auto">Réserver</button>
                         </div>
                     </div> 
-                    
-          
+                        
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Choisir une date et un horaire</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row" id="dateBlockModal">
+                                        
+                                    <div class="row" id="timeBlockModal"></div> 
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary mx-auto" data-bs-dismiss="modal">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             {{ form_end(reservations) }}
            

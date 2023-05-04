@@ -81,7 +81,7 @@ class TimeDisplayController extends AbstractController
             $nbPlacesSoirRestantes = 20 - $nbConvivesSoir;
 
             
-            echo '<div class="row" id="midi">';
+            echo '<div class="row text-center" id="midi">';
             //comparer les deux dates entre elles
             if ($date1Ts < $todayDateTs) {
                 echo 'Ce jour est déjà passé !';
@@ -96,7 +96,7 @@ class TimeDisplayController extends AbstractController
             //afichage des horaires disponibles le midi    
             } else {
                 echo '<div class="col">Il reste ' . $nbPlacesMidiRestantes . ' place(s) disponible pour le service du midi.<div>';
-                echo '<div class="row">';
+                echo '<div class="row justify-content-center">';
                 for ($j = 0; $j < count($horairesMidi); $j++) {
                     echo '<div type="text" class="col-3 col-md-1 heure ' . $horairesMidi[$j] . '" value="' . $horairesMidi[$j] . '" id="' . $horairesMidi[$j] . '">';
                     echo $horairesMidi[$j];
@@ -117,7 +117,7 @@ class TimeDisplayController extends AbstractController
             //affichage des horaires disponibles du soir    
             } else {
                 echo '<div class="col">Il reste ' . $nbPlacesSoirRestantes . ' place(s) disponible pour le service du soir.<div>';
-                echo '<div class="row">';
+                echo '<div class="row justify-content-center">';
                 for ($l = 0; $l < count($horairesSoir); $l++) {                    
                     echo '<div type="text" class="col-3 col-md-1 heure" ' . $horairesSoir[$l] . 'value="' . $horairesSoir[$l] . '" id="' . $horairesSoir[$l] . '">'; 
                     echo $horairesSoir[$l];

@@ -1,6 +1,6 @@
 .carte {
-    margin-top: 25vh; 
-    box-shadow: 0 0 5px #F6AA1C;     
+    margin-top: 22vh; 
+    box-shadow: 0 0 5px #F6AA1C;   
 }
 .card-img-top {
     width: 15vw;
@@ -9,20 +9,18 @@
 .input-group {
     margin-bottom: 1vh;
 }
-.datepicker {
-    box-shadow: 0 0 2px #941B0C; 
+.dateClone {
+    display: none;
 }
 .heure {
     background-color: #fff3b0;
-    margin-right: 0.5vw;
+    font-size: 0.95em;
+    margin-right: 1vw;
     margin-bottom: 0.5vh; 
-    margin-top: 0.5vh;
+    margin-top: 0.8vh;
 }
 .heure:hover {
     background-color : #1b998b;
-}
-#reservations_time {
-    visibility: hidden;
 }
 .form-control:focus, .form-select:focus {
     box-shadow: 0 0 5px #F6AA1C;
@@ -36,6 +34,7 @@
 .btn:hover {
     background-color: #1b998b;
 }
+
 .modale {
     position: absolute;
     top: 0;
@@ -61,9 +60,16 @@
     top: 8px;
     text-decoration: none;
 }
+#modalButton {
+    display: none;
+    background-color: #941B0C; 
+}
+#modalButton:hover {
+    background-color:#1b998b
+}
 @media screen and (min-width: 850px) {
     .carte {
-        width: 50vw;
+        width: 75vw;
     }
 }
 @media screen and (max-width: 850px) {
@@ -79,4 +85,4 @@
     .card-body {
         width: 100%;
     }
-}
+}    
