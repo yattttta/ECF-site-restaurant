@@ -24,15 +24,15 @@
                 </div>
                 <div class="menu">
                     <ul class="listeMenu fs-2 fw-semibold">
-                        <li class="gestion"><a href="/login" class="lien">SE CONNECTER</a></li>
-                        <li class="liste pt-4"><a href="/form" class="lien">CRÉER UN COMPTE</a></li>
-                        <li class="liste pt-4"><a href="/reservation" class="lien">RÉSERVER</a></li>
+                        <li class="gestion"><a href="./login" class="lien">SE CONNECTER</a></li>
+                        <li class="liste pt-4"><a href="./form" class="lien">CRÉER UN COMPTE</a></li>
+                        <li class="liste pt-4"><a href="./reservation" class="lien">RÉSERVER</a></li>
                         <li class="liste pt-4"><a href="pageAccueil/Le_Quai_Antique.pdf" class="lien" target="_blank">NOTRE CARTE</a></li>
-                        <li class="liste pt-4"><a href="/" class="lien">ACCUEIL</a></li>
+                        <li class="liste pt-4"><a href="./" class="lien">ACCUEIL</a></li>
                     </ul>
                 </div>  
                 <div class="col col-md-5 restau d-flex justify-content-center align-items-center">
-                    <a class="titre" href="/"><p class="fw-semibold nom">Le Quai Antique</p></a>
+                    <a class="titre" href="./"><p class="fw-semibold nom">Le Quai Antique</p></a>
                 </div>
                 <div class="col d-flex justify-content-end align-items-center pe-4 pb-3">
                     {% if app.user %}
@@ -41,7 +41,7 @@
                             <a href="{{ path('app_logout') }}" class="d-flex justify-content-center">Se déconnecter</a>
                         </div>
                         {% else %}
-                        <a href="/login" class="lien d-flex align-items-center connected">SE CONNECTER</a></li>                       
+                        <a href="./login" class="lien d-flex align-items-center connected">SE CONNECTER</a></li>                       
                     {% endif %}
                 </div>
                   
