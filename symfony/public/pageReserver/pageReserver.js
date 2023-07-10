@@ -10,8 +10,7 @@ $(document).ready(() => {
     let timeBlockModal = document.getElementById('timeBlockModal')
     const modalButton = document.getElementById('modalButton')
 
-    let heuresMidi = ['12h00', '12h15', '12h30', '12h45', '13h00']    
-    let heuresSoir = ['19h00', '19h15', '19h30', '19h45', '20h00', '20h15', '20h30', '20h45', '21h00']
+    let heuresMidi = ['12h00', '12h15', '12h30', '12h45', '13h00','19h00', '19h15', '19h30', '19h45', '20h00', '20h15', '20h30', '20h45', '21h00']
 
     //requete ajax sur datepicker
     recherche.addEventListener('change', function() {
@@ -69,24 +68,7 @@ $(document).ready(() => {
         })
     }
 
-    for (let j = 0; j < heuresSoir.length; j++) {
-        $(document).on('click', '#' + heuresSoir[j], function() {
-            timeValue.style.visibility = "visible"
-            timeValue.setAttribute('value', heuresSoir[j])
-
-            //Garder background-color bleu au click sur l'heure
-            let timeSliceSoir = heuresSoir.slice(0, j)
-            let timeSliceSoir1 = heuresSoir.slice(j + 1)
-            let timeSliceConcatSoir = timeSliceSoir.concat(timeSliceSoir1)
-            let selectedTimeSoir = document.getElementById(heuresSoir.slice(j, j + 1))
-            
-            selectedTimeSoir.style.backgroundColor = '#1b998b'
-            for (let l = 0; l < timeSliceConcatSoir.length; l++) {
-                let notSelectedTimeSoir = document.getElementById(timeSliceConcatSoir[l])
-                notSelectedTimeSoir.style.backgroundColor = "#fff3b0"
-            }
-        })
-    }
+    
 
     
      
