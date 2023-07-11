@@ -38,7 +38,7 @@
                     {% if app.user %}
                         <div class="connected">
                             Bienvenue {{ app.user.prenom }}
-                            <a href="{{ path('app_logout') }}" class="d-flex justify-content-center">Se déconnecter</a>
+                            <a href="{{ path('app_logout') }}" class="lien2 d-flex justify-content-center">Se déconnecter</a>
                         </div>
                         {% else %}
                         <a href="./login" class="lien d-flex align-items-center connected">SE CONNECTER</a></li>                       

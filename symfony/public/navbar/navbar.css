@@ -70,9 +70,12 @@ header {
 .lien:hover {
     font-weight: lighter;
 }
-.lien {
+.lien, .lien2 {
     text-decoration: none;
     color: #621708;   
+}
+.lien2:hover {
+    color: #1b998b;
 }
 .liste {
     margin-top: 10px;    
