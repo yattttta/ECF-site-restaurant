@@ -66,10 +66,5 @@ $(document).ready(() => {
                 notSelectedTimeMidi.style.backgroundColor = "#fff3b0"
             }
         })
-    }
-
-    
-
-    
-     
+    }   
 })
